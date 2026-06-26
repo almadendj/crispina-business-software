@@ -3,7 +3,7 @@
 ## Identity
 
 - **Trade name:** Crispina Dive Scuba Diving Services
-  *(letterhead reads "CRISPINA DIVE — SCUBA DIVING SERVICES")*
+  _(letterhead reads "CRISPINA DIVE — SCUBA DIVING SERVICES")_
 - **Type:** Scuba diving, water-sports, and equipment-rental shop.
 - **Location:** Inside **Costabella Tropical Beach Resort/Hotel**, Buyong,
   Maribago, Lapu-Lapu City (Mactan Island), Cebu, Philippines.
@@ -35,8 +35,8 @@ Because the shop sits inside the hotel, two things follow:
 
 ## The Costabella partnership — "Costa Trip"
 
-**Costa Trip** is a separate boat-rental product run *in partnership with the
-hotel*:
+**Costa Trip** is a separate boat-rental product run _in partnership with the
+hotel_:
 
 - **The hotel accepts the bookings** (the guest books through Costabella, not
   directly with Crispina).
