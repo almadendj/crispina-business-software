@@ -6,16 +6,16 @@ and also listed in [`open-questions.md`](open-questions.md).
 
 ## Glossary
 
-| Term | Meaning |
-| --- | --- |
-| **Voucher** | The unit of sale in the main shop. A numbered slip that holds one or more line items for one customer/room on one date. Example voucher numbers: `1909`, `1918`, `0201`. |
-| **Line item** | A single charged thing on a voucher: a service or a rented item, with a quantity/pax and an amount. One voucher can have several (e.g. a boat rental + 5 mask/snorkel sets). |
-| **Room Charge** | Customer charges the purchase to their hotel room instead of paying cash. Settled later via the hotel. |
-| **Cash** | Customer pays cash directly to Crispina. |
-| **Day Use** | A walk-in / non-staying customer; appears where a room number would be. |
-| **Pax** | Number of persons (drives tiered/per-person pricing). |
-| **Costa Trip** | Hotel-booked boat trip; a separate sales stream with its own report and per-pax pricing. |
-| **Commission** | Percentage of sales owed to Costabella for operating inside the resort. |
+| Term            | Meaning                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Voucher**     | The unit of sale in the main shop. A numbered slip that holds one or more line items for one customer/room on one date. Example voucher numbers: `1909`, `1918`, `0201`.     |
+| **Line item**   | A single charged thing on a voucher: a service or a rented item, with a quantity/pax and an amount. One voucher can have several (e.g. a boat rental + 5 mask/snorkel sets). |
+| **Room Charge** | Customer charges the purchase to their hotel room instead of paying cash. Settled later via the hotel.                                                                       |
+| **Cash**        | Customer pays cash directly to Crispina.                                                                                                                                     |
+| **Day Use**     | A walk-in / non-staying customer; appears where a room number would be.                                                                                                      |
+| **Pax**         | Number of persons (drives tiered/per-person pricing).                                                                                                                        |
+| **Costa Trip**  | Hotel-booked boat trip; a separate sales stream with its own report and per-pax pricing.                                                                                     |
+| **Commission**  | Percentage of sales owed to Costabella for operating inside the resort.                                                                                                      |
 
 ## Core entities (logical)
 
@@ -35,7 +35,7 @@ MonthlyReport (derived, not stored as source of truth)
   period (month/year), type (MAIN | COSTA_TRIP), generated_at
 ```
 
-> **Vouchers and line items are the source of truth.** Reports are *derived* by
+> **Vouchers and line items are the source of truth.** Reports are _derived_ by
 > aggregating them for a month — they are generated, not hand-maintained.
 
 ## Settlement types (main shop)
@@ -60,7 +60,7 @@ and totals each independently. In the sample month:
 For reference only (not computed by us): direct **cash** sales carry ~20%
 commission, **room charges** ~25%. Costa Trip carries **no** commission (its
 prices are already net — see below). Keep these rates documented so commission
-*can* be added later, but do not implement the calculation now.
+_can_ be added later, but do not implement the calculation now.
 
 ## Pricing rules
 
@@ -81,10 +81,10 @@ Pricing modes seen in the catalog (`prices.md`):
 Per-pax tiered by group size:
 
 | Group size (adults) | Price per adult |
-| --- | --- |
-| 1–3 | ₱2,400 |
-| 4–8 | ₱1,560 |
-| 9+ | ₱960 |
+| ------------------- | --------------- |
+| 1–3                 | ₱2,400          |
+| 4–8                 | ₱1,560          |
+| 9+                  | ₱960            |
 
 - **Child** = 50% of the adult rate, ages 4 and above.
 - **Children appear as their own row** on the report, directly **below** the
@@ -111,6 +111,7 @@ pad, **manually entered** by the operator. It is **not** system-generated and is
 out of order or with gaps (sample shows `1909…1950` then `0201…0221`).
 
 Design implications:
+
 - The operator types the OR number; the system does **not** auto-assign it.
 - Do **not** enforce sequence/ordering. At most, warn on an exact duplicate
   within a period; never block saving.

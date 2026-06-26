@@ -57,12 +57,12 @@ Architect so these can be added later, but **do not build them now.**
 
 ## Roadmap
 
-| Phase | Focus |
-| --- | --- |
-| **1 — POS (now)** | Offline-first POS + automatic monthly reports + cloud monitoring |
-| **2 — Online presence** | Public catalog, online booking requests |
-| **3 — Online payments** | Card/e-wallet payment, deposits, confirmations |
-| **4 — Operations** | Inventory, staff accounts/roles, analytics dashboards |
+| Phase                   | Focus                                                            |
+| ----------------------- | ---------------------------------------------------------------- |
+| **1 — POS (now)**       | Offline-first POS + automatic monthly reports + cloud monitoring |
+| **2 — Online presence** | Public catalog, online booking requests                          |
+| **3 — Online payments** | Card/e-wallet payment, deposits, confirmations                   |
+| **4 — Operations**      | Inventory, staff accounts/roles, analytics dashboards            |
 
 ## Stakeholders
 

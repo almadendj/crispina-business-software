@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+dist
+coverage
+package-lock.json
+# Serwist-generated service worker (build artifact)
+public/sw.js
+public/swe-worker-*.js
+# Real reports / sample binaries
+docs/*.pdf

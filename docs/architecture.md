@@ -2,15 +2,15 @@
 
 ## Constraints that drive the design
 
-| Decision | Owner's answer |
-| --- | --- |
-| Platform | **Cloud web app** (for remote monitoring) |
-| Internet | **Mostly reliable**, but **slow/spotty must not block a sale** |
-| Users | **Single device, single user** (one shop attendant) |
-| Future | Online bookings + payments later — don't build now, don't block it |
+| Decision | Owner's answer                                                     |
+| -------- | ------------------------------------------------------------------ |
+| Platform | **Cloud web app** (for remote monitoring)                          |
+| Internet | **Mostly reliable**, but **slow/spotty must not block a sale**     |
+| Users    | **Single device, single user** (one shop attendant)                |
+| Future   | Online bookings + payments later — don't build now, don't block it |
 
-The interesting tension: *"cloud app"* (for monitoring) **+** *"must work on bad
-internet."* The answer is an **offline-first (local-first) web app** that syncs
+The interesting tension: _"cloud app"_ (for monitoring) **+** _"must work on bad
+internet."_ The answer is an **offline-first (local-first) web app** that syncs
 to the cloud.
 
 ## Why offline-first beats a plain cloud app or a manual queue
@@ -52,15 +52,15 @@ background. The owner monitors the cloud copy remotely.
 
 ## Recommended stack
 
-| Layer | Choice | Why |
-| --- | --- | --- |
-| App framework | **Next.js (React) as a PWA** | One codebase for the POS now and the public booking site later; installable; offline shell via service worker |
-| Local store | **IndexedDB via Dexie.js** | Reliable structured offline storage; simple queries |
-| Sync | **Outbox pattern** (append pending ops; push idempotently with client-generated UUIDs) | Robust on flaky links; no duplicates on retry; trivial because single writer |
-| Backend / DB | **Supabase (Postgres)** | Managed Postgres + Auth + REST/Realtime + RLS; fast path to online bookings/payments in later phases; available in this environment |
-| Hosting | **Vercel** (app) + Supabase (data) | Low-cost, simple deploys |
-| PDF reports | Server-side render to match sample layouts exactly | Reports are a contract; deterministic output |
-| Offline shell | **Workbox** service worker | Caches the app so it loads with no signal |
+| Layer         | Choice                                                                                 | Why                                                                                                                                 |
+| ------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| App framework | **Next.js (React) as a PWA**                                                           | One codebase for the POS now and the public booking site later; installable; offline shell via service worker                       |
+| Local store   | **IndexedDB via Dexie.js**                                                             | Reliable structured offline storage; simple queries                                                                                 |
+| Sync          | **Outbox pattern** (append pending ops; push idempotently with client-generated UUIDs) | Robust on flaky links; no duplicates on retry; trivial because single writer                                                        |
+| Backend / DB  | **Supabase (Postgres)**                                                                | Managed Postgres + Auth + REST/Realtime + RLS; fast path to online bookings/payments in later phases; available in this environment |
+| Hosting       | **Vercel** (app) + Supabase (data)                                                     | Low-cost, simple deploys                                                                                                            |
+| PDF reports   | Server-side render to match sample layouts exactly                                     | Reports are a contract; deterministic output                                                                                        |
+| Offline shell | **Workbox** service worker                                                             | Caches the app so it loads with no signal                                                                                           |
 
 > Alternative considered: purpose-built Postgres sync engines (PowerSync /
 > ElectricSQL / RxDB). Powerful, but **overkill for one device/one user** and

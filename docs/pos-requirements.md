@@ -14,7 +14,7 @@ from [`domain-model.md`](domain-model.md); design from [`architecture.md`](archi
 
 ## 2. Transaction (voucher) entry — main shop
 
-- **R2.1** Create a voucher with: date, voucher number, room number *or* "Day Use"
+- **R2.1** Create a voucher with: date, voucher number, room number _or_ "Day Use"
   (room optional / allow multiple), and a settlement type (**Cash** or **Room
   Charge**).
 - **R2.2** Add one or more **line items** to a voucher; each has a service (or
@@ -43,7 +43,7 @@ from [`domain-model.md`](domain-model.md); design from [`architecture.md`](archi
 
 - **R4.1** Generate the **Main Billing Report** for a selected month using the
   same columns as the sample: `DATE · VOUCHER NO. · DETAILS · RM. NO. · CASH ·
-  Room Charge`, with header (company/address/period). A **clean equivalent** of
+Room Charge`, with header (company/address/period). A **clean equivalent** of
   the sample layout is acceptable — it need not be pixel-perfect — **but it must
   be consistent**: see R4.8.
 - **R4.2** Compute and show **TOTAL SALES**, split into **CASH** and **Room
@@ -67,7 +67,7 @@ from [`domain-model.md`](domain-model.md); design from [`architecture.md`](archi
   - **Across runs** — regenerating the same month yields identical output
     (deterministic; e.g. stable sort by date then voucher number).
   - **Internally** — one fixed format for currency (always `₱1,234.00`), dates
-    (e.g. `May 1`), and column widths. Generated reports must be *more* uniform
+    (e.g. `May 1`), and column widths. Generated reports must be _more_ uniform
     than the hand-made samples (which mixed `200`, `₱200.00`, `₱8000`).
 
 ## 5. Monitoring (owner)

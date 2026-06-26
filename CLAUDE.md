@@ -23,24 +23,24 @@ generate the monthly reports automatically.**
 
 ## Read these next (in `/docs`)
 
-| Doc | What it covers |
-| --- | --- |
-| [`project-status.md`](docs/project-status.md) | **Where we are now** — current phase, decisions recap, Linear tracking, next steps. Read this to get current fast. |
-| [`company-profile.md`](docs/company-profile.md) | Who the company is, where it operates, the Costabella relationship, services |
-| [`project-overview.md`](docs/project-overview.md) | Problem, vision, goals, scope, roadmap |
-| [`domain-model.md`](docs/domain-model.md) | Core concepts: vouchers, line items, payment/settlement types, commission, pricing rules |
-| [`architecture.md`](docs/architecture.md) | Cloud + offline-first design, recommended stack, sync engine |
-| [`pos-requirements.md`](docs/pos-requirements.md) | Release 1 functional + non-functional requirements |
-| [`open-questions.md`](docs/open-questions.md) | Decisions still needed from the owner before/while building |
-| [`prices.md`](docs/prices.md) | Authoritative price list (services + Costa Trip tiers) |
-| `sample_billing_report.pdf` / `sample_costa_trip.pdf` | Real examples of the two reports the system must reproduce |
+| Doc                                                   | What it covers                                                                                                     |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [`project-status.md`](docs/project-status.md)         | **Where we are now** — current phase, decisions recap, Linear tracking, next steps. Read this to get current fast. |
+| [`company-profile.md`](docs/company-profile.md)       | Who the company is, where it operates, the Costabella relationship, services                                       |
+| [`project-overview.md`](docs/project-overview.md)     | Problem, vision, goals, scope, roadmap                                                                             |
+| [`domain-model.md`](docs/domain-model.md)             | Core concepts: vouchers, line items, payment/settlement types, commission, pricing rules                           |
+| [`architecture.md`](docs/architecture.md)             | Cloud + offline-first design, recommended stack, sync engine                                                       |
+| [`pos-requirements.md`](docs/pos-requirements.md)     | Release 1 functional + non-functional requirements                                                                 |
+| [`open-questions.md`](docs/open-questions.md)         | Decisions still needed from the owner before/while building                                                        |
+| [`prices.md`](docs/prices.md)                         | Authoritative price list (services + Costa Trip tiers)                                                             |
+| `sample_billing_report.pdf` / `sample_costa_trip.pdf` | Real examples of the two reports the system must reproduce                                                         |
 
 ## Working agreements for agents
 
 - **Do not build online booking/payments in Release 1.** Keep the data model
   ready for it; don't implement it.
 - **Prices are defaults, not hard rules.** Real vouchers show the same service
-  sold at different prices. Always capture the *actual amount charged*, with the
+  sold at different prices. Always capture the _actual amount charged_, with the
   catalog price as a pre-fill the user can override.
 - **A sale must never be blocked by the network.** Offline-first is a hard
   requirement (see `architecture.md`).
