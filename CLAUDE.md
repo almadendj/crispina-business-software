@@ -25,6 +25,7 @@ generate the monthly reports automatically.**
 
 | Doc | What it covers |
 | --- | --- |
+| [`project-status.md`](docs/project-status.md) | **Where we are now** — current phase, decisions recap, Linear tracking, next steps. Read this to get current fast. |
 | [`company-profile.md`](docs/company-profile.md) | Who the company is, where it operates, the Costabella relationship, services |
 | [`project-overview.md`](docs/project-overview.md) | Problem, vision, goals, scope, roadmap |
 | [`domain-model.md`](docs/domain-model.md) | Core concepts: vouchers, line items, payment/settlement types, commission, pricing rules |
@@ -58,5 +59,11 @@ generate the monthly reports automatically.**
 
 ## Status
 
-Planning phase. No application code yet. Next step after docs sign-off:
-scaffold the project per `architecture.md`.
+**Planning complete; no application code yet.** All owner decisions are captured,
+work is tracked in Linear (team **Crispina** / `CRI`, project "Crispina POS —
+Release 1", 20 issues across 4 milestones). Next: scaffold the app (CRI-1) and
+define the DB schema (CRI-3); the design system (CRI-7) can run in parallel.
+
+See [`docs/project-status.md`](docs/project-status.md) for the full current-state
+record (decisions recap, milestone→ticket map, next steps). Keep it updated as
+state changes.
